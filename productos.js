@@ -19,10 +19,12 @@ window.FF_CONFIG = {
   // Texto del envío que se muestra en la web y va en el mensaje de WhatsApp.
   envio: 'Envío gratis dentro de Chajarí',
   // Texto para quien está fuera de la ciudad (dejar '' para ocultarlo).
-  envioOtras: 'Otras localidades: consultanos',
+  envioOtras: 'Otras localidades: coordinamos el envío por WhatsApp',
 
   // Formas de pago: el cliente elige una en el carrito y va en el mensaje.
   pagos: ['Efectivo al recibir', 'Transferencia'],
+  // Aclaración sobre el pago (el alias NO va en la web: se pasa por WhatsApp).
+  pagoNota: 'Si elegís transferencia, te pasamos el alias por WhatsApp',
 
   // Texto opcional que aparece arriba de todo (dejar '' para ocultarlo).
   aviso: 'Envío gratis en Chajarí · Pedido mínimo $25.000',
@@ -59,7 +61,6 @@ window.FF_PRODUCTOS = [
       ['Castañas de cajú', 'caju'],
     ],
     conMani: false,
-    destacado: 'El favorito',
     presentaciones: [
       { peso: '250 g', precio: 8200 },
       { peso: '500 g', precio: 16000 },
@@ -179,9 +180,11 @@ window.FF_PRODUCTOS = [
     bajada: 'Sabor intenso y tostado, para picar o para la cocina.',
     ingredientes: [['Avellanas', 'avellana']],
     conMani: false,
-    // Precio a confirmar: mientras no haya precios, la tarjeta muestra "Consultar".
-    // Cuando estén, cargar por ejemplo: { peso: '500 g', precio: 0000 }, { peso: '1 kg', precio: 0000 }
-    presentaciones: [],
+    presentaciones: [
+      { peso: '250 g', precio: 13000 },
+      { peso: '500 g', precio: 25700 },
+      { peso: '1 kg', precio: 49000 },
+    ],
     foto: 'img/avellanas.webp',
   },
   {
@@ -207,8 +210,10 @@ window.FF_PRODUCTOS = [
     bajada: 'Crocante y rendidor, para picar o sumar a tus mixes.',
     ingredientes: [['Maní', 'mani']],
     conMani: true,
-    // Precio a confirmar (ver Avellanas).
-    presentaciones: [],
+    presentaciones: [
+      { peso: '500 g', precio: 3500 },
+      { peso: '1 kg', precio: 6000 },
+    ],
     foto: 'img/mani.webp',
   },
   {
@@ -252,6 +257,6 @@ window.FF_PRODUCTOS = [
     presentaciones: [
       { peso: '1 kg', precio: 51500 },
     ],
-    foto: '',
+    foto: 'img/pistacho.webp',
   },
 ];
