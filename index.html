@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Feel Foods · Mixes y frutos secos en Chajarí</title>
+  <meta name="description" content="Mixes y frutos secos Feel Foods en Chajarí, Entre Ríos. Por 250 g, 500 g o por kilo. Pedí por WhatsApp con envío gratis dentro de la ciudad.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="Feel Foods · Mixes y frutos secos">
+  <meta property="og:description" content="Pedí por WhatsApp. Envío gratis dentro de Chajarí.">
+  <meta name="theme-color" content="#054523">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="topbar" id="topbar" hidden></div>
+
+  <header class="header" id="header">
+    <div class="wrap header__in">
+      <a href="#inicio" class="header__logo" aria-label="Feel Foods, inicio">
+        <img src="img/logo.svg" alt="Feel Foods" width="60" height="56">
+      </a>
+      <nav class="nav" aria-label="Secciones">
+        <a href="#productos">Productos</a>
+        <a href="#como-pedir">Cómo pedir</a>
+        <a href="#comercios">Comercios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="cart-btn" id="cartOpen" aria-label="Abrir carrito">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 7Z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>
+        <span class="cart-btn__label">Carrito</span>
+        <span class="cart-btn__count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="wrap hero__in">
+        <div class="hero__copy">
+          <p class="eyebrow eyebrow--light">Frutos secos · Chajarí</p>
+          <h1 class="hero__title">Lo bueno,<br><em>bien mezclado.</em></h1>
+          <p class="hero__lead">Cinco mixes y frutos secos seleccionados, por 250&nbsp;g, 500&nbsp;g o por kilo. Hacé tu pedido y te lo llevamos gratis dentro de Chajarí.</p>
+          <div class="hero__ctas">
+            <a href="#productos" class="btn btn--accent">Ver productos</a>
+            <a href="#como-pedir" class="btn btn--ghost">Cómo pedir</a>
+          </div>
+        </div>
+        <div class="hero__art" id="heroArt" aria-hidden="true"></div>
+      </div>
+      <div class="hero__scatter" id="heroScatter" aria-hidden="true"></div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="perks">
+      <div class="wrap perks__in">
+        <div class="perk"><span class="perk__ico" data-nut="almendra"></span><div><strong>Envío gratis</strong><span>Te lo llevamos a tu casa dentro de Chajarí.</span></div></div>
+        <div class="perk"><span class="perk__ico" data-nut="nuez"></span><div><strong>250 g, 500 g o por kilo</strong><span>Mixes y frutos secos sueltos.</span></div></div>
+        <div class="perk"><span class="perk__ico" data-nut="mani"></span><div><strong>Maní sin sal</strong><span>Tostado, sin sal agregada.</span></div></div>
+        <div class="perk"><span class="perk__ico perk__ico--wa"><span class="ico ico--wa"></span></span><div><strong>Pedido por WhatsApp</strong><span>Armás el carrito y nos llega al instante.</span></div></div>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="products" id="productos">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Nuestros productos</p>
+            <h2 class="section-title">Elegí el tuyo</h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filtrar productos">
+            <button class="chip is-on" data-filter="todos">Todos</button>
+            <button class="chip" data-filter="mix">Mixes</button>
+            <button class="chip" data-filter="suelto">Frutos secos</button>
+            <button class="chip" data-filter="sin">Sin maní</button>
+          </div>
+        </div>
+        <div class="group" data-cat="mix">
+          <h3 class="group__title">Mixes</h3>
+          <div class="grid" id="gridMix"></div>
+        </div>
+        <div class="group" data-cat="suelto">
+          <h3 class="group__title">Frutos secos sueltos</h3>
+          <div class="grid" id="gridSuelto"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO PEDIR -->
+    <section class="steps" id="como-pedir">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--light">Simple y directo</p>
+        <h2 class="section-title section-title--light">Cómo pedir</h2>
+        <ol class="steps__list">
+          <li><span class="steps__n">01</span><h3>Elegí tus productos</h3><p>Seleccioná el tamaño y la cantidad, y sumalos al carrito.</p></li>
+          <li><span class="steps__n">02</span><h3>Completá tus datos</h3><p>Tu nombre y la dirección donde te lo llevamos.</p></li>
+          <li><span class="steps__n">03</span><h3>Envialo por WhatsApp</h3><p>Se abre el chat con el pedido escrito. Lo confirmamos y coordinamos el pago y la entrega.</p></li>
+        </ol>
+        <ul class="terms" id="terms"></ul>
+      </div>
+    </section>
+
+    <!-- NOSOTROS (se muestra solo si hay texto en productos.js) -->
+    <section class="about" id="nosotros" hidden>
+      <div class="wrap about__in">
+        <div>
+          <p class="eyebrow">Nosotros</p>
+          <h2 class="section-title">¿Quiénes somos?</h2>
+        </div>
+        <div class="about__text" id="aboutText"></div>
+      </div>
+    </section>
+
+    <!-- COMERCIOS -->
+    <section class="biz" id="comercios">
+      <div class="wrap biz__in">
+        <div class="biz__copy">
+          <p class="eyebrow">Para comercios</p>
+          <h2 class="section-title">¿Tenés un negocio?</h2>
+          <p class="biz__lead">También vendemos por mayor, con una lista de precios especial para comercios. Escribinos y te la mandamos.</p>
+          <p class="biz__where" id="bizWhere"></p>
+        </div>
+        <a class="btn btn--wa" id="bizWa" target="_blank" rel="noopener"><span class="ico ico--wa"></span> Pedir lista para comercios</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contacto">
+    <div class="wrap footer__in">
+      <div class="footer__brand">
+        <img src="img/logo.svg" alt="Feel Foods" width="90" height="84">
+        <p>Mixes y frutos secos.<br>Chajarí, Entre Ríos.</p>
+      </div>
+      <div class="footer__links">
+        <a id="footWa" target="_blank" rel="noopener"><span class="ico ico--wa"></span><span id="footWaTxt"></span></a>
+        <a id="footIg" target="_blank" rel="noopener"><span class="ico ico--ig"></span><span id="footIgTxt"></span></a>
+      </div>
+    </div>
+    <div class="wrap footer__legal">© <span id="year"></span> Feel Foods. Los precios pueden cambiar sin previo aviso; se confirman al responder tu pedido.</div>
+  </footer>
+
+  <!-- CARRITO -->
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Carrito" aria-hidden="true">
+    <div class="drawer__head">
+      <h2>Tu pedido</h2>
+      <button class="icon-btn" id="cartClose" aria-label="Cerrar carrito">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="drawer__body" id="drawerBody">
+      <div class="empty" id="cartEmpty">
+        <span class="empty__ico" data-nut="caju"></span>
+        <p>Tu carrito está vacío.</p>
+        <button class="btn btn--dark" id="emptyGo">Ver productos</button>
+      </div>
+      <ul class="lines" id="cartLines"></ul>
+
+      <form class="checkout" id="checkout" novalidate>
+        <h3>Tus datos</h3>
+        <label class="field">
+          <span>Nombre y apellido</span>
+          <input id="cName" name="nombre" autocomplete="name" required placeholder="Ej: María González">
+        </label>
+        <p class="ship" id="shipNote"></p>
+        <label class="field" id="addrField">
+          <span>Dirección de entrega</span>
+          <input id="cAddr" name="direccion" autocomplete="street-address" placeholder="Calle, número, barrio">
+        </label>
+        <label class="field">
+          <span>Comentarios <em>(opcional)</em></span>
+          <textarea id="cNotes" name="notas" rows="2" placeholder="Horario para recibirlo, forma de pago, etc."></textarea>
+        </label>
+      </form>
+    </div>
+
+    <div class="drawer__foot" id="drawerFoot">
+      <div class="min" id="minBox">
+        <div class="min__bar"><span id="minFill"></span></div>
+        <p id="minTxt"></p>
+      </div>
+      <div class="total"><span>Total estimado</span><strong id="cartTotal">$0</strong></div>
+      <button class="btn btn--wa btn--block" id="sendWa">
+        <span class="ico ico--wa"></span> Enviar pedido por WhatsApp
+      </button>
+      <p class="fineprint">Te respondemos para confirmar stock, horario de entrega y forma de pago.</p>
+    </div>
+  </aside>
+
+  <button class="mbar" id="mbar" hidden>
+    <span class="mbar__info"><span class="mbar__count" id="mbarCount">0</span><span>Ver pedido</span></span>
+    <strong id="mbarTotal">$0</strong>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="productos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
