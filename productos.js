@@ -18,6 +18,11 @@ window.FF_CONFIG = {
   pedidoMinimo: 25000,
   // Texto del envío que se muestra en la web y va en el mensaje de WhatsApp.
   envio: 'Envío gratis dentro de Chajarí',
+  // Texto para quien está fuera de la ciudad (dejar '' para ocultarlo).
+  envioOtras: 'Otras localidades: consultanos',
+
+  // Formas de pago: el cliente elige una en el carrito y va en el mensaje.
+  pagos: ['Efectivo al recibir', 'Transferencia'],
 
   // Texto opcional que aparece arriba de todo (dejar '' para ocultarlo).
   aviso: 'Envío gratis en Chajarí · Pedido mínimo $25.000',
@@ -28,7 +33,9 @@ window.FF_CONFIG = {
   // Sección "¿Quiénes somos?". Si el texto queda vacío, la sección no se muestra.
   // Cada elemento de la lista es un párrafo.
   nosotros: [
-    // 'FeelFoods nació con una idea simple: …',
+    'FeelFoods nació con una idea simple: acercar el sabor, la calidad y lo natural de los frutos secos a la mesa de todos los días.',
+    'Somos de Chajarí, Entre Ríos. Elegimos almendras, nueces, castañas, avellanas y frutas secas, y las combinamos en mixes pensados para cada momento: para entrenar, para el trabajo, para compartir o simplemente para darte un gusto.',
+    'Cada paquete lleva sus ingredientes a la vista, sin vueltas. Hoy nos encontrás en comercios de Chajarí, Feliciano, San Pedro y Villa del Rosario, y también podés pedirnos directo por WhatsApp para que te lo llevemos a tu casa.',
   ],
 };
 

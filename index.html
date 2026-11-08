@@ -102,7 +102,7 @@
         <ol class="steps__list">
           <li><span class="steps__n">01</span><h3>Elegí tus productos</h3><p>Seleccioná el tamaño y la cantidad, y sumalos al carrito.</p></li>
           <li><span class="steps__n">02</span><h3>Completá tus datos</h3><p>Tu nombre y la dirección donde te lo llevamos.</p></li>
-          <li><span class="steps__n">03</span><h3>Envialo por WhatsApp</h3><p>Se abre el chat con el pedido escrito. Lo confirmamos y coordinamos el pago y la entrega.</p></li>
+          <li><span class="steps__n">03</span><h3>Envialo por WhatsApp</h3><p>Se abre el chat con el pedido escrito. Lo confirmamos y coordinamos el horario de entrega.</p></li>
         </ol>
         <ul class="terms" id="terms"></ul>
       </div>
@@ -125,7 +125,7 @@
         <div class="biz__copy">
           <p class="eyebrow">Para comercios</p>
           <h2 class="section-title">¿Tenés un negocio?</h2>
-          <p class="biz__lead">También vendemos por mayor, con una lista de precios especial para comercios. Escribinos y te la mandamos.</p>
+          <p class="biz__lead">También vendemos por mayor a comercios. <strong>Precios mayoristas: consultar.</strong> Escribinos por WhatsApp y te mandamos la lista.</p>
           <p class="biz__where" id="bizWhere"></p>
         </div>
         <a class="btn btn--wa" id="bizWa" target="_blank" rel="noopener"><span class="ico ico--wa"></span> Pedir lista para comercios</a>
@@ -145,7 +145,7 @@
         <a id="footIg" target="_blank" rel="noopener"><span class="ico ico--ig"></span><span id="footIgTxt"></span></a>
       </div>
     </div>
-    <div class="wrap footer__legal">© <span id="year"></span> Feel Foods. Los precios pueden cambiar sin previo aviso; se confirman al responder tu pedido.</div>
+    <div class="wrap footer__legal">© <span id="year"></span> Feel Foods. Precios de venta al público. Pueden cambiar sin previo aviso; se confirman al responder tu pedido.</div>
   </footer>
 
   <!-- CARRITO -->
@@ -177,9 +177,13 @@
           <span>Dirección de entrega</span>
           <input id="cAddr" name="direccion" autocomplete="street-address" placeholder="Calle, número, barrio">
         </label>
+        <div class="field">
+          <span>Forma de pago</span>
+          <div class="seg" id="paySeg" role="radiogroup" aria-label="Forma de pago"></div>
+        </div>
         <label class="field">
           <span>Comentarios <em>(opcional)</em></span>
-          <textarea id="cNotes" name="notas" rows="2" placeholder="Horario para recibirlo, forma de pago, etc."></textarea>
+          <textarea id="cNotes" name="notas" rows="2" placeholder="Horario para recibirlo, referencias, etc."></textarea>
         </label>
       </form>
     </div>
@@ -193,7 +197,7 @@
       <button class="btn btn--wa btn--block" id="sendWa">
         <span class="ico ico--wa"></span> Enviar pedido por WhatsApp
       </button>
-      <p class="fineprint">Te respondemos para confirmar stock, horario de entrega y forma de pago.</p>
+      <p class="fineprint">Te respondemos para confirmar stock y horario de entrega.</p>
     </div>
   </aside>
 

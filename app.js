@@ -258,10 +258,18 @@
   const form = $('#checkout');
   if (cust.nombre) $('#cName').value = cust.nombre;
   if (cust.direccion) $('#cAddr').value = cust.direccion;
-  $('#shipNote').textContent = (CFG.envio || 'Envío a domicilio') + '. No tenemos retiro en local.';
+  $('#shipNote').textContent = [(CFG.envio || 'Envío a domicilio') + '. No tenemos retiro en local.', CFG.envioOtras ? CFG.envioOtras + '.' : ''].join(' ').trim();
+  const PAGOS = CFG.pagos || [];
+  $('#paySeg').innerHTML = PAGOS.map((t, n) =>
+    `<label><input type="radio" name="pago" value="${esc(t)}"${(cust.pago ? cust.pago === t : n === 0) ? ' checked' : ''}><span>${esc(t)}</span></label>`).join('');
+  $('#paySeg').closest('.field').hidden = !PAGOS.length;
+  if (PAGOS.length && !form.querySelector('input[name="pago"]:checked')) form.querySelector('input[name="pago"]').checked = true;
+  const pago = () => (form.querySelector('input[name="pago"]:checked') || {}).value || '';
+  const saveCust = () => store.set(CUST_KEY, { nombre: $('#cName').value, direccion: $('#cAddr').value, pago: pago() });
+  form.addEventListener('change', saveCust);
   form.addEventListener('input', e => {
     e.target.closest('.field')?.classList.remove('is-bad');
-    store.set(CUST_KEY, { nombre: $('#cName').value, direccion: $('#cAddr').value });
+    saveCust();
   });
   form.addEventListener('submit', e => e.preventDefault());
 
@@ -281,7 +289,7 @@
       toast(bad.id === 'cName' ? 'Completá tu nombre para enviar el pedido' : 'Completá la dirección de envío');
       return;
     }
-    store.set(CUST_KEY, { nombre, direccion: dir });
+    saveCust();
 
     const lines = cart.map(l => `• ${l.qty} × ${byId(l.id).nombre} (${l.peso}) — ${money(priceOf(l) * l.qty)}`);
     const msg = [
@@ -294,6 +302,7 @@
       `Nombre: ${nombre}`,
       `Dirección de entrega: ${dir}`,
       CFG.envio ? `Envío: ${CFG.envio.replace(/^Envío\s+/i, '')}` : null,
+      pago() ? `Pago: ${pago()}` : null,
       notas ? `Comentarios: ${notas}` : null,
     ].filter(x => x !== null).join('\n');
 
@@ -325,7 +334,9 @@
   $('#terms').innerHTML = [
     CFG.envio,
     MIN ? `Pedido mínimo ${money(MIN)}` : null,
+    (CFG.pagos || []).length ? 'Pago: ' + CFG.pagos.join(' o ').toLowerCase() : null,
     'Solo envíos a domicilio, sin retiro',
+    CFG.envioOtras,
   ].filter(Boolean).map(t => `<li>${esc(t)}</li>`).join('');
 
   const about = (CFG.nosotros || []).filter(t => t && t.trim());

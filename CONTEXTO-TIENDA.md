@@ -1,6 +1,6 @@
 # Feel Foods – Tienda web · Contexto
 
-Última actualización: 7 de noviembre de 2026
+Última actualización: 7 de noviembre de 2026 (tarde)
 
 ## Qué es
 Una web estática para mostrar los productos de Feel Foods, armar un carrito y mandar el pedido por WhatsApp. No usa servidor ni base de datos y no tiene pagos online: el pedido llega como un mensaje de WhatsApp ya escrito.
@@ -15,6 +15,9 @@ Una web estática para mostrar los productos de Feel Foods, armar un carrito y m
 - Están en **Chajarí, Entre Ríos**.
 - **Envío gratis dentro de la ciudad. No hay retiro.** Todavía no se sabe qué pasa con los pedidos de otras localidades.
 - **Pedido mínimo: $25.000.** Mientras no se llega al mínimo, la web no deja enviar el pedido.
+- **Formas de pago:** efectivo al recibir o transferencia. El cliente elige una en el carrito y va en el mensaje (`pagos` en `productos.js`).
+- Los precios de la web son de **venta al público**, incluidos los de 1 kg de los mixes (confirmado el 7/11/2026). Los mayoristas figuran como "consultar" en la sección Comercios.
+- Pedidos fuera de Chajarí: la web dice "Otras localidades: consultanos" (`envioOtras`).
 - **Venden por mayor**, con otra lista para comercios (no la pasó). Los comercios donde más venden están en Chajarí, Feliciano, San Pedro y Villa del Rosario.
 
 ## Productos y precios (cargados el 6/11/2026)
@@ -34,7 +37,6 @@ Una web estática para mostrar los productos de Feel Foods, armar un carrito y m
 | Avellanas | – | Consultar | Consultar |
 | Maní | – | Consultar | Consultar |
 
-- Los precios por kilo de los mixes llegaron después del texto sobre la venta mayorista. Se tomaron como precios al público porque siguen la misma escala que los de 250 g y 500 g, pero **hay que confirmarlo con el dueño**.
 
 - **Avellanas y maní** se venden sueltos, pero el dueño todavía no pasó los precios. Tienen `presentaciones: []`: la tarjeta muestra "Precio: Consultar" y un botón que abre WhatsApp con "Quiero consultar el precio de: …". No se pueden agregar al carrito. Cuando lleguen los precios, se cargan las presentaciones y la tarjeta pasa a funcionar como las demás. Las presentaciones (500 g y 1 kg) también están por confirmar.
 
@@ -84,15 +86,13 @@ Una web estática para mostrar los productos de Feel Foods, armar un carrito y m
 - "El favorito" sigue en el Mix Premium sin que el dueño lo haya confirmado.
 
 ## Lo que falta que pase el dueño
-1. **Formas de pago.**
-2. **El texto completo de "¿Quiénes somos?".** Llegó cortado ("…acercar el sabor, l"). Cuando llegue, va en `nosotros` dentro de `productos.js`, un párrafo por elemento, y la sección aparece sola.
-3. **Pedidos de otras localidades** (Feliciano, San Pedro, Villa del Rosario, etc.): ¿se envían? ¿Con qué costo?
-4. Confirmar que los precios por kilo de los mixes son al público y no mayoristas.
-5. Confirmar los ingredientes de cada mix. Salen de las etiquetas.
-6. Foto del pistacho, con el mismo estilo de bowl que los demás sueltos. Precios y presentaciones de avellanas y maní.
-7. Qué producto destacar.
-8. Opcional: datos confirmados para destacar (sin TACC, vegano, sin conservantes, duración), información nutricional y 2 o 3 opiniones reales.
-9. Más adelante: dominio propio o el gratuito de Netlify. Con la dirección definitiva se puede agregar la imagen de vista previa para cuando se comparte el link, que necesita una dirección completa.
+1. Revisar el texto de "¿Quiénes somos?". Lo propuso Claude a partir de la primera frase del dueño. Está en `nosotros`, dentro de `productos.js`.
+2. Revisar las descripciones de los productos, la frase de la portada y "El favorito" en el Premium.
+3. Precios y presentaciones de avellanas y maní.
+4. Foto del pistacho.
+5. Confirmar los ingredientes de cada mix.
+6. Opcional: datos confirmados (sin TACC, etc.), información nutricional, opiniones y fotos reales.
+7. Publicar: conectar el repositorio a Netlify, elegir dominio, agregar la imagen para compartir y hacer un pedido de prueba real.
 
 ## Cuando llegue la información
 - Precios, productos, WhatsApp, mínimo, envío y "Nosotros": editar `productos.js`.
