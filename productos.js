@@ -15,7 +15,7 @@ window.FF_CONFIG = {
   ciudad: 'Chajarí',
   provincia: 'Entre Ríos',
   // Pedido mínimo en pesos (0 = sin mínimo).
-  pedidoMinimo: 25000,
+  pedidoMinimo: 15000,
   // Texto del envío que se muestra en la web y va en el mensaje de WhatsApp.
   envio: 'Envío gratis dentro de Chajarí',
   // Texto para quien está fuera de la ciudad (dejar '' para ocultarlo).
@@ -27,7 +27,7 @@ window.FF_CONFIG = {
   pagoNota: 'Si elegís transferencia, te pasamos el alias por WhatsApp',
 
   // Texto opcional que aparece arriba de todo (dejar '' para ocultarlo).
-  aviso: 'Envío gratis en Chajarí · Pedido mínimo $25.000',
+  aviso: 'Envío gratis en Chajarí · Pedido mínimo $15.000',
 
   // Venta a comercios: localidades donde ya hay comercios con Feel Foods.
   comercios: ['Chajarí', 'Feliciano', 'San Pedro', 'Villa del Rosario'],
@@ -147,7 +147,7 @@ window.FF_PRODUCTOS = [
     categoria: 'suelto',
     nombre: 'Almendras',
     color: '#9A6236',
-    bajada: 'Para picar, sumar al desayuno o llevar a todos lados.',
+    bajada: 'Sabor delicado y textura crocante.',
     ingredientes: [['Almendras', 'almendra']],
     conMani: false,
     presentaciones: [
@@ -162,7 +162,7 @@ window.FF_PRODUCTOS = [
     nombre: 'Nueces cuartos',
     corto: 'Nueces',
     color: '#7E5A34',
-    bajada: 'Listas para tus recetas, ensaladas, yogur o para picar.',
+    bajada: 'Un ingrediente versátil para disfrutar y crear.',
     ingredientes: [['Nueces', 'nuez']],
     etiquetas: ['En cuartos'],
     conMani: false,
@@ -177,7 +177,7 @@ window.FF_PRODUCTOS = [
     categoria: 'suelto',
     nombre: 'Avellanas',
     color: '#8B4E2B',
-    bajada: 'Sabor intenso y tostado, para picar o para la cocina.',
+    bajada: 'Pequeñas, aromáticas y llenas de personalidad.',
     ingredientes: [['Avellanas', 'avellana']],
     conMani: false,
     presentaciones: [
@@ -193,7 +193,7 @@ window.FF_PRODUCTOS = [
     nombre: 'Castañas de cajú',
     corto: 'Cajú',
     color: '#A57B3C',
-    bajada: 'Suaves y cremosas, de las más pedidas para picar.',
+    bajada: 'Suavidad y sabor en cada bocado.',
     ingredientes: [['Castañas de cajú', 'caju']],
     conMani: false,
     presentaciones: [
@@ -207,7 +207,7 @@ window.FF_PRODUCTOS = [
     categoria: 'suelto',
     nombre: 'Maní',
     color: '#A9793F',
-    bajada: 'Crocante y rendidor, para picar o sumar a tus mixes.',
+    bajada: 'El sabor de un clásico que siempre acompaña.',
     ingredientes: [['Maní', 'mani']],
     conMani: true,
     presentaciones: [
@@ -222,7 +222,7 @@ window.FF_PRODUCTOS = [
     nombre: 'Banana glaseada',
     corto: 'Banana',
     color: '#B5831C',
-    bajada: 'El toque dulce y crocante para tus mixes o para picar.',
+    bajada: 'Un toque dulce que conquista desde el primer bocado.',
     ingredientes: [['Banana glaseada', 'banana']],
     conMani: false,
     presentaciones: [
@@ -236,7 +236,7 @@ window.FF_PRODUCTOS = [
     categoria: 'suelto',
     nombre: 'Pasas',
     color: '#6B2F45',
-    bajada: 'Dulzor natural para el desayuno, la avena o la cocina.',
+    bajada: 'Dulces, suaves y naturalmente deliciosas.',
     ingredientes: [['Pasas de uva', 'pasa']],
     conMani: false,
     presentaciones: [
@@ -250,7 +250,7 @@ window.FF_PRODUCTOS = [
     categoria: 'suelto',
     nombre: 'Pistacho',
     color: '#5E7F34',
-    bajada: 'Con cáscara y salado, ideal para picar en cualquier momento.',
+    bajada: 'Un sabor único para disfrutar sin apuro.',
     ingredientes: [['Pistacho', 'pistacho']],
     etiquetas: ['Con cáscara', 'Salado'],
     conMani: false,

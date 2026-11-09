@@ -14,7 +14,7 @@ Una web estática para mostrar los productos de Feel Foods, armar un carrito y m
 - WhatsApp de pedidos: **3456 59 59 75** (`5493456595975`). Ojo: es distinto al de las etiquetas (3456 59 20 37).
 - Están en **Chajarí, Entre Ríos**.
 - **Envío gratis dentro de la ciudad. No hay retiro.** Todavía no se sabe qué pasa con los pedidos de otras localidades.
-- **Pedido mínimo: $25.000.** Mientras no se llega al mínimo, la web no deja enviar el pedido.
+- **Pedido mínimo: $15.000.** Mientras no se llega al mínimo, la web no deja enviar el pedido.
 - **Formas de pago:** efectivo al recibir o transferencia. El cliente elige una en el carrito y va en el mensaje (`pagos` en `productos.js`).
 - Los precios de la web son de **venta al público**, incluidos los de 1 kg de los mixes (confirmado el 7/11/2026). Los mayoristas figuran como "consultar" en la sección Comercios.
 - Pedidos fuera de Chajarí: se coordinan por WhatsApp (`envioOtras`). En Feliciano, San Pedro y Villa del Rosario hay comercios que venden la marca.
