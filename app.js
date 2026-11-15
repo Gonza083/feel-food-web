@@ -16,6 +16,8 @@
   };
   const CART_KEY = 'ff-carrito-v1';
   const CUST_KEY = 'ff-cliente-v1';
+  const FREE = +CFG.envioGratisDesde || 0;
+  const SHIP = +CFG.costoEnvio || 0;
 
   /* ---------- Ilustraciones de frutos secos (viewBox 40×40) ---------- */
   const NUTS = {
@@ -98,6 +100,7 @@
             <div class="stepper"><button type="button" data-step="-1" aria-label="Menos">−</button><output>1</output><button type="button" data-step="1" aria-label="Más">+</button></div>
             <button type="button" class="btn btn--dark add">Agregar · <span class="add__price">${money(p.presentaciones[0].precio)}</span></button>
           </div>
+          ${FREE ? `<p class="card__ship">Envío gratis desde ${money(FREE)}</p>` : ''}
         </div>`;
   }
 
@@ -171,10 +174,13 @@
   /* ---------- Carrito ---------- */
   let cart = store.get(CART_KEY, []).filter(l => byId(l.id) && byId(l.id).presentaciones.some(v => v.peso === l.peso));
   const priceOf = l => byId(l.id).presentaciones.find(v => v.peso === l.peso).precio;
-  const total = () => cart.reduce((t, l) => t + priceOf(l) * l.qty, 0);
+  const subtotal = () => cart.reduce((t, l) => t + priceOf(l) * l.qty, 0);
   const count = () => cart.reduce((t, l) => t + l.qty, 0);
   const MIN = +CFG.pedidoMinimo || 0;
-  const missing = () => Math.max(0, MIN - total());
+  const missing = () => Math.max(0, MIN - subtotal());
+  const faltaGratis = () => FREE ? Math.max(0, FREE - subtotal()) : 0;
+  const shipCost = () => (SHIP && faltaGratis() > 0) ? SHIP : 0;
+  const total = () => subtotal() + shipCost();
 
   function addToCart(id, peso, qty) {
     const l = cart.find(x => x.id === id && x.peso === peso);
@@ -206,14 +212,21 @@
         <div class="line__price">${money(priceOf(l) * l.qty)}</div>
       </li>`;
     }).join('');
+    $('#cartSub').textContent = money(subtotal());
+    $('#cartShip').innerHTML = shipCost() ? money(shipCost())
+      : (SHIP ? `<s>${money(SHIP)}</s> <b>Gratis</b>` : '<b>Gratis</b>');
     $('#cartTotal').textContent = money(total());
     const falta = missing();
-    $('#minBox').hidden = !MIN;
-    $('#minBox').classList.toggle('is-ok', falta === 0);
-    $('#minFill').style.width = (MIN ? Math.min(100, total() / MIN * 100) : 100) + '%';
+    const fg = faltaGratis();
+    // Barra: primero el pedido mínimo (si hay), si no, el envío gratis.
+    const goal = falta ? MIN : FREE;
+    $('#minBox').hidden = !goal;
+    $('#minBox').classList.toggle('is-ok', !falta && fg === 0);
+    $('#minFill').style.width = (goal ? Math.min(100, subtotal() / goal * 100) : 100) + '%';
     $('#minTxt').innerHTML = falta
       ? `Te faltan <b>${money(falta)}</b> para el pedido mínimo de ${money(MIN)}.`
-      : `✓ Llegaste al pedido mínimo. ${esc(CFG.envio || '')}`;
+      : fg ? `Te faltan <b>${money(fg)}</b> para el envío gratis.`
+      : '✓ ¡Tenés envío gratis!';
     $('#sendWa').disabled = falta > 0;
     const mbar = $('#mbar');
     $('#mbarCount').textContent = count();
@@ -299,11 +312,12 @@
       '',
       ...lines,
       '',
+      `Subtotal: ${money(subtotal())}`,
+      `Envío: ${shipCost() ? money(shipCost()) : 'gratis'}`,
       `*Total estimado: ${money(total())}*`,
       '',
       `Nombre: ${nombre}`,
       `Dirección de entrega: ${dir}`,
-      CFG.envio ? `Envío: ${CFG.envio.replace(/^Envío\s+/i, '')}` : null,
       pago() ? `Pago: ${pago()}` : null,
       notas ? `Comentarios: ${notas}` : null,
     ].filter(x => x !== null).join('\n');

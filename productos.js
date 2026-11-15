@@ -15,9 +15,12 @@ window.FF_CONFIG = {
   ciudad: 'Chajarí',
   provincia: 'Entre Ríos',
   // Pedido mínimo en pesos (0 = sin mínimo).
-  pedidoMinimo: 15000,
-  // Texto del envío que se muestra en la web y va en el mensaje de WhatsApp.
-  envio: 'Envío gratis dentro de Chajarí',
+  pedidoMinimo: 0,
+  // Envío dentro de la ciudad: lo que cuesta y desde qué monto es gratis.
+  costoEnvio: 3500,
+  envioGratisDesde: 15000,
+  // Texto del envío que se muestra en la web.
+  envio: 'Envío a domicilio en Chajarí: $3.500, gratis desde $15.000',
   // Texto para quien está fuera de la ciudad (dejar '' para ocultarlo).
   envioOtras: 'Otras localidades: coordinamos el envío por WhatsApp',
 
@@ -27,7 +30,7 @@ window.FF_CONFIG = {
   pagoNota: 'Si elegís transferencia, te pasamos el alias por WhatsApp',
 
   // Texto opcional que aparece arriba de todo (dejar '' para ocultarlo).
-  aviso: 'Envío gratis en Chajarí · Pedido mínimo $15.000',
+  aviso: 'Envío gratis en Chajarí desde $15.000',
 
   // Venta a comercios: localidades donde ya hay comercios con Feel Foods.
   comercios: ['Chajarí', 'Feliciano', 'San Pedro', 'Villa del Rosario'],
