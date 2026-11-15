@@ -17,10 +17,10 @@ window.FF_CONFIG = {
   // Pedido mínimo en pesos (0 = sin mínimo).
   pedidoMinimo: 0,
   // Envío dentro de la ciudad: lo que cuesta y desde qué monto es gratis.
-  costoEnvio: 3500,
+  costoEnvio: 4000,
   envioGratisDesde: 15000,
   // Texto del envío que se muestra en la web.
-  envio: 'Envío a domicilio en Chajarí: $3.500, gratis desde $15.000',
+  envio: 'Envío a domicilio en Chajarí: $4.000, gratis desde $15.000',
   // Texto para quien está fuera de la ciudad (dejar '' para ocultarlo).
   envioOtras: 'Otras localidades: coordinamos el envío por WhatsApp',
 
