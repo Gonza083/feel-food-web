@@ -33,17 +33,19 @@ Una web estática para mostrar los productos de Feel Foods, armar un carrito y m
 | Mix Deporte | 5.900 | 11.100 | 21.700 |
 | Mix Europeo | 5.800 | 10.900 | 21.500 |
 | Mix Europeo c/ maní | 5.000 | 9.900 | 18.500 |
-| Almendras | – | 17.500 | 33.000 |
-| Nueces cuartos | – | 12.000 | 23.000 |
-| Castañas de cajú | – | 10.000 | 20.500 |
-| Banana glaseada | – | 8.000 | 15.000 |
+| Almendras | 9.250 | 17.500 | 33.000 |
+| Nueces cuartos | 6.500 | 12.000 | 23.000 |
+| Castañas de cajú | 5.500 | 10.000 | 20.500 |
+| Banana glaseada | 5.500 | 10.000 | 18.000 |
 | Pasas | – | 4.800 | 8.800 |
-| Pistacho con cáscara salado | – | – | 51.500 |
+| Pistacho con cáscara salado | 14.000 | 27.850 | 51.500 |
 | Avellanas | 13.000 | 25.700 | 49.000 |
 | Maní | – | 3.500 | 6.000 |
+| Ciruelas D'Agen medianas sin carozo | – | 8.000 | 15.500 |
 
 
 - Precios de avellanas y maní cargados el 7/11/2026.
+- 15/11/2026: 250 g de almendras, nueces, cajú, banana y pistacho; 500 g de pistacho; banana con precios nuevos; se sumaron las ciruelas D'Agen con foto `img/ciruelas.webp` (original en `imagenes prueba/las que faltan/ciruelas.jfif`).
 
 ## Archivos (`tienda/`)
 | Archivo | Qué hace |

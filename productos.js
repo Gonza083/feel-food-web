@@ -151,6 +151,7 @@ window.FF_PRODUCTOS = [
     ingredientes: [['Almendras', 'almendra']],
     conMani: false,
     presentaciones: [
+      { peso: '250 g', precio: 9250 },
       { peso: '500 g', precio: 17500 },
       { peso: '1 kg', precio: 33000 },
     ],
@@ -167,6 +168,7 @@ window.FF_PRODUCTOS = [
     etiquetas: ['En cuartos'],
     conMani: false,
     presentaciones: [
+      { peso: '250 g', precio: 6500 },
       { peso: '500 g', precio: 12000 },
       { peso: '1 kg', precio: 23000 },
     ],
@@ -197,6 +199,7 @@ window.FF_PRODUCTOS = [
     ingredientes: [['Castañas de cajú', 'caju']],
     conMani: false,
     presentaciones: [
+      { peso: '250 g', precio: 5500 },
       { peso: '500 g', precio: 10000 },
       { peso: '1 kg', precio: 20500 },
     ],
@@ -226,8 +229,9 @@ window.FF_PRODUCTOS = [
     ingredientes: [['Banana glaseada', 'banana']],
     conMani: false,
     presentaciones: [
-      { peso: '500 g', precio: 8000 },
-      { peso: '1 kg', precio: 15000 },
+      { peso: '250 g', precio: 5500 },
+      { peso: '500 g', precio: 10000 },
+      { peso: '1 kg', precio: 18000 },
     ],
     foto: 'img/banana.webp',
   },
@@ -255,8 +259,26 @@ window.FF_PRODUCTOS = [
     etiquetas: ['Con cáscara', 'Salado'],
     conMani: false,
     presentaciones: [
+      { peso: '250 g', precio: 14000 },
+      { peso: '500 g', precio: 27850 },
       { peso: '1 kg', precio: 51500 },
     ],
     foto: 'img/pistacho.webp',
+  },
+  {
+    id: 'ciruelas',
+    categoria: 'suelto',
+    nombre: "Ciruelas D'Agen",
+    corto: 'Ciruelas',
+    color: '#4A2440',
+    bajada: 'Dulces y jugosas, listas para comer.',
+    ingredientes: [["Ciruelas D'Agen", 'ciruela']],
+    etiquetas: ['Medianas', 'Sin carozo'],
+    conMani: false,
+    presentaciones: [
+      { peso: '500 g', precio: 8000 },
+      { peso: '1 kg', precio: 15500 },
+    ],
+    foto: 'img/ciruelas.webp',
   },
 ];
